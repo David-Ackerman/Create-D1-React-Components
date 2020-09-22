@@ -2,16 +2,10 @@
 
 ## Features
 
-  <img src="https://github.com/David-Ackerman/NLW-proffy/blob/master/ProffyImages/ProffyTFGif.gif" alt="demo" height="425">
-  <img src="https://github.com/David-Ackerman/NLW-proffy/blob/master/ProffyImages/ProffyTLGif.gif" alt="demo" height="425">
+### Create an React Component base template with only two clicks and some typing
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
+  <img src="https://github.com/David-Ackerman/Create-D1-React-Components/blob/master/images/menuToCreate.PNG" alt="demo" height="425">
+  <img src="https://github.com/David-Ackerman/Create-D1-React-Components/blob/master/images/createdComponent.PNG" alt="demo" height="425">
 
 <!-- Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
 
@@ -28,7 +22,7 @@ I'll add some features in future, for now enjoy it,
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+First release, just to create a template to your React Component.
 
 ### 1.0.0
 
