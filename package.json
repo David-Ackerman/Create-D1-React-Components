@@ -4,6 +4,7 @@
   "description": "Extension made to help D1 developers to create base templates of the react components",
   "version": "0.0.1",
   "icon": "images/Logo.png",
+  "publisher": "DavidAckerman",
   "engines": {
     "vscode": "^1.49.0"
   },
