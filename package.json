@@ -5,6 +5,7 @@
   "version": "0.0.1",
   "icon": "images/Logo.png",
   "publisher": "DavidAckerman",
+  "repository": "https://github.com/David-Ackerman/Create-D1-React-Components",
   "engines": {
     "vscode": "^1.49.0"
   },
