@@ -1,0 +1,167 @@
+{
+  "JSDocs Component": {
+    "prefix": "jdcomp",
+    "body": [
+      "$BLOCK_COMMENT_START*",
+      " * @export",
+      " * @component",
+      " * @name ${2:${TM_FILENAME_BASE}}",
+      " *",
+      " * @description",
+      " * Reponsável por montar o componente ${TM_FILENAME_BASE}",
+      " $BLOCK_COMMENT_END"
+    ],
+    "description": "Create JSDocs of simple components"
+  },
+  "JSDocs Hook": {
+    "prefix": "jdhook",
+    "body": [
+      "$BLOCK_COMMENT_START*",
+      " * @export",
+      " * @hook",
+      " * @name ${1:${TM_FILENAME_BASE}}",
+      " *",
+      " * @description",
+      " * Reponsável por conter o hook personalizado ${TM_FILENAME_BASE}",
+      " $BLOCK_COMMENT_END"
+    ],
+    "description": "Create a JSDocs template of a custom hook"
+  },
+  "JSDocs Function": {
+    "prefix": "jdfunc",
+    "body": [
+      "$BLOCK_COMMENT_START*",
+      " * @function",
+      " * @name ${1:functionName}",
+      " *",
+      " * @description",
+      " * Reponsavel por... ${2: add your function description}",
+      " $BLOCK_COMMENT_END"
+    ],
+    "description": "Create a JSDocs for simple functions"
+  },
+  "JSDocs export Function": {
+    "prefix": "jdxfunc",
+    "body": [
+      "$BLOCK_COMMENT_START*",
+      " * @export",
+      " * @function",
+      " * @name ${1:functionName}",
+      " *",
+      " * @description",
+      " * Reponsavel por ${2: add your function description}",
+      " $BLOCK_COMMENT_END"
+    ],
+    "description": "Create a JSDocs for an exportable function"
+  },
+  "JSDocs Async Function": {
+    "prefix": "jdservice",
+    "body": [
+      "$BLOCK_COMMENT_START*",
+      " * @async",
+      " * @function",
+      " * @name ${1:serviceName}",
+      " *",
+      " * @description",
+      " * Reponsavel por ${2: add your service description}",
+      " $BLOCK_COMMENT_END"
+    ],
+    "description": "Create a JSDocs for async functions"
+  },
+  "JSDocs export Service": {
+    "prefix": "jdxservice",
+    "body": [
+      "$BLOCK_COMMENT_START*",
+      " * @export",
+      " * @async",
+      " * @function",
+      " * @name ${1:serviceName}",
+      " *",
+      " * @description",
+      " * Reponsavel por ${2: add your service description}",
+      " $BLOCK_COMMENT_END"
+    ],
+    "description": "Create a JSDocs for async functions"
+  },
+  "JSDocs Type Props": {
+    "prefix": "jdtprops",
+    "body": [
+      "$BLOCK_COMMENT_START*",
+      " * @type",
+      " * @name Props",
+      " *",
+      " * @description",
+      " * Contem a tipagem das props do componente ${1:${TM_FILENAME_BASE}}",
+      " $BLOCK_COMMENT_END"
+    ],
+    "description": "Create JSDocs for type declarations of component props"
+  },
+  "JSDocs export Type Props": {
+    "prefix": "jdxtprops",
+    "body": [
+      "$BLOCK_COMMENT_START*",
+      " * @export",
+      " * @type",
+      " * @name ${1:YourTypeName}",
+      " *",
+      " * @description",
+      " * Contem os types para ${1:YourTypeName}",
+      " $BLOCK_COMMENT_END"
+    ],
+    "description": "Create JSDocs for an exportable type declarations of component props"
+  },
+  "JSDocs Type Params": {
+    "prefix": "jdtparams",
+    "body": [
+      "$BLOCK_COMMENT_START*",
+      " * @type",
+      " * @name Params",
+      " *",
+      " * @description",
+      " * Contem a tipagem dos parametros da função ${1:${TM_FILENAME_BASE}}",
+      " $BLOCK_COMMENT_END"
+    ],
+    "description": "Create JSDocs for type declarations of function params"
+  },
+  "JSDocs export Type Params": {
+    "prefix": "jdxtparams",
+    "body": [
+      "$BLOCK_COMMENT_START*",
+      " * @export",
+      " * @type",
+      " * @name ${1:typeName}",
+      " *",
+      " * @description",
+      " * Contem os types dos parametros da função ${1:functionName}",
+      " $BLOCK_COMMENT_END"
+    ],
+    "description": "Create JSDocs for an exportable type declarations of function params"
+  },
+  "JSDocs Type Request": {
+    "prefix": "jdtrequest",
+    "body": [
+      "$BLOCK_COMMENT_START*",
+      " * @export",
+      " * @type",
+      " * @name Request",
+      " *",
+      " * @description",
+      " * Contem a tipagem dos parametros do serviço ${1:serviceName}",
+      " $BLOCK_COMMENT_END"
+    ],
+    "description": "Create JSDocs for type declarations of function params"
+  },
+  "JSDocs export Type Request": {
+    "prefix": "jdxtrequest",
+    "body": [
+      "$BLOCK_COMMENT_START*",
+      " * @type",
+      " * @name ${1:serviceName}",
+      " *",
+      " * @description",
+      " * Contem os types dos parametros do serviço ${1:serviceName}",
+      " $BLOCK_COMMENT_END"
+    ],
+    "description": "Create JSDocs for an exportable type declarations of function params"
+  }
+}

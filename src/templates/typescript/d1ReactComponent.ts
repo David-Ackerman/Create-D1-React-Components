@@ -9,7 +9,6 @@ type Props = {
 /**
  * @export
  * @component
- * @function
  * @name ${componentName}
  * 
  * @description

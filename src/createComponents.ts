@@ -5,26 +5,20 @@ import * as vscode from 'vscode';
 import tsxD1ReactComponent from './templates/typescript/d1ReactComponent';
 import tsxd1createIndex from './templates/typescript/d1createIndex';
 
-export default async (
-  componentName: string,
-  { dir, styled, mobile }: { dir?: string; styled?: boolean; mobile?: boolean }
-) => {
-  // const config = vscode.workspace.getConfiguration('createD1ReactComponents');
+type Props = {
+  dir: string;
+};
+const componentFileName = 'index.tsx';
 
-  // const fileExtension = config.get('fileExtension') as string;
-  // const cssFileFormat = config.get('stylesFormat') as string;
-
-  // const componentsExtensions = 'tsx';
-
-  const componentFileName = 'index.tsx';
-
-  // const componentFileName = componentsFileNames;
-  // const componentFileName = componentsFileNames;
-
+export default async (componentName: string, { dir }: Props) => {
+  // Armazena as funçoes que criam o cogido dos arquivos
   let reactD1Component = tsxD1ReactComponent;
   let createD1Index = tsxd1createIndex;
 
-  const projectRoot = (vscode.workspace.workspaceFolders as any)[0].uri.fsPath;
+  // Armazena o diretorio raiz do projeto
+  const projectRoot = vscode.workspace.workspaceFolders
+    ? vscode.workspace.workspaceFolders[0].uri.fsPath
+    : '';
 
   componentName = componentName.split(' ').join('');
 
@@ -43,32 +37,23 @@ export default async (
   if (dir[dir.length - 1] !== '/') {
     dir = dir + '/';
   }
+
   const dirWithFileName = dir + componentName;
   const filePath = (fileName: string) => dirWithFileName + '/' + fileName;
 
+  // Cria a pasta do compoonente com o nome digitado pelo desenvolvedor
   createDir(dirWithFileName);
 
+  // Cria o arquivo index do componente.
+  await createFile(filePath(componentFileName), createD1Index(componentName));
+
+  // Cria o arquivo com o codigo do componente
   await createFile(
     filePath(`${componentName}.tsx`),
     reactD1Component(componentName)
   );
-  await createFile(filePath(componentFileName), createD1Index(componentName));
-  // if (mobile) {
-  //   if (styled) {
-  //     await createFile(filePath(componentFileName), styledReactNativeArrowComponent(componentName));
-  //     await createFile(filePath(styledFileName), styledFileReactNative());
-  //   } else {
-  //     await createFile(filePath(componentFileName), reactNativeArrowComponent(componentName));
-  //   }
-  // } else {
-  //   if (styled) {
-  //     await createFile(filePath(componentFileName), styledReactArrowComponent(componentName, importStyledFileName));
-  //     await createFile(filePath(styledFileName), styledTemplate());
-  //   } else {
-  //     await createFile(filePath(componentFileName), reactArrowComponent(componentName));
-  //   }
-  // }
 
+  // Abre o arquivo do componente criado em uma aba do vscode
   setTimeout(() => {
     vscode.workspace
       .openTextDocument(filePath(componentFileName))
@@ -81,6 +66,7 @@ export default async (
   }, 50);
 };
 
+// Função que cria o diretorio do componente
 const createDir = (targetDir: string) => {
   const sep = path.sep;
   const initDir = path.isAbsolute(targetDir) ? sep : '';
@@ -92,19 +78,16 @@ const createDir = (targetDir: string) => {
       fs.mkdirSync(curDir);
     } catch (err) {
       if (err.code === 'EEXIST') {
-        // curDir already exists!
         return curDir;
       }
 
-      // To avoid `EISDIR` error on Mac and `EACCES`-->`ENOENT` and `EPERM` on Windows.
       if (err.code === 'ENOENT') {
-        // Throw the original parentDir error on curDir `ENOENT` failure.
         throw new Error(`EACCES: permission denied, mkdir '${parentDir}'`);
       }
 
       const caughtErr = ['EACCES', 'EPERM', 'EISDIR'].indexOf(err.code) > -1;
       if (!caughtErr || (caughtErr && curDir === path.resolve(targetDir))) {
-        throw err; // Throw if it's just the last created dir.
+        throw err;
       }
     }
 
@@ -112,15 +95,18 @@ const createDir = (targetDir: string) => {
   }, initDir);
 };
 
+//função que cria os arquivos do componente
 const createFile = async (filePath: string, content: string | string[]) => {
   if (!fs.existsSync(filePath)) {
-    await fs.createWriteStream(filePath).close();
-    await fs.writeFile(filePath, content.toString(), (err) => {
+    fs.createWriteStream(filePath).close();
+    fs.writeFile(filePath, content.toString(), (err) => {
       if (err) {
-        vscode.window.showErrorMessage('Maker cant write to file.');
+        vscode.window.showErrorMessage(
+          'Não foi possivel exrever o conteudo do arquivo.'
+        );
       }
     });
   } else {
-    vscode.window.showWarningMessage('File already exists.');
+    vscode.window.showWarningMessage('Arquivo já existe');
   }
 };

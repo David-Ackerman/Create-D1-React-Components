@@ -3,7 +3,7 @@
   "displayName": "create-d1-react-components",
   "description": "Extension made to help D1 developers to create base templates of the react components",
   "version": "0.0.1",
-  "icon": "images/Logo.png",
+  "icon": "./images/Logo.png",
   "publisher": "DavidAckerman",
   "repository": "https://github.com/David-Ackerman/Create-D1-React-Components",
   "engines": {
@@ -31,7 +31,25 @@
           "when": "explorerResourceIsFolder"
         }
       ]
-    }
+    },
+    "snippets": [
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/snippets.json"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",

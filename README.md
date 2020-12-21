@@ -24,6 +24,6 @@ I'll add some features in future, for now enjoy it,
 
 First release, just to create a template to your React Component.
 
-### 1.0.0
+### 1.0.1
 
 Initial release of create D1 Components
