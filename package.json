@@ -10,7 +10,7 @@
     "vscode": "^1.49.0"
   },
   "categories": [
-    "Other"
+    "Snippets"
   ],
   "activationEvents": [
     "onCommand:extension.create-d1-react-component"
@@ -35,19 +35,19 @@
     "snippets": [
       {
         "language": "javascriptreact",
-        "path": "./snippets/snippets.json"
+        "path": "./out/snippets/snippets.json"
       },
       {
         "language": "javascript",
-        "path": "./snippets/snippets.json"
+        "path": "./out/snippets/snippets.json"
       },
       {
         "language": "typescript",
-        "path": "./snippets/snippets.json"
+        "path": "./out/snippets/snippets.json"
       },
       {
         "language": "typescriptreact",
-        "path": "./snippets/snippets.json"
+        "path": "./out/snippets/snippets.json"
       }
     ]
   },
